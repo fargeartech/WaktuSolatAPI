@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Text.RegularExpressions;
 using WaktuSolatMY.Application.Services;
 
 namespace WaktuSolatMY.Application.Extensions
@@ -9,6 +10,16 @@ namespace WaktuSolatMY.Application.Extensions
         {
             services.AddSingleton<IJakimSolatService, JakimSolatService>();
             return services;
+        }
+    }
+
+    public static class StringExtensions
+    {
+        private static readonly Regex _regex = new Regex("<.*?>");
+
+        public static string StripTags(this string input)
+        {
+            return _regex.Replace(input, string.Empty);
         }
     }
 }

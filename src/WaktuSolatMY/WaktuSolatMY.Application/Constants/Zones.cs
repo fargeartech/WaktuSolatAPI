@@ -78,6 +78,7 @@ namespace WaktuSolatMY.Application.Constants
         public static class BaseUrls
         {
             public const string JAKIM = "https://www.e-solat.gov.my/index.php";
+            public const string JAKIM_Crawl = "https://www.e-solat.gov.my/index.php?siteId=24&pageId=24";
         }
 
         public static class Date_FormatSupported

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
 using WaktuSolatMY.Application.Services;
 
 namespace WaktuSolatMY.API.Controllers
@@ -14,16 +13,29 @@ namespace WaktuSolatMY.API.Controllers
         }
 
         [HttpGet("{zone}")]
-        public async Task<IActionResult> Index(string zone, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> FindByZone(string zone, CancellationToken cancellationToken = default)
         {
             var result = await _jakimSolatService.GetWakTuSolatByZone(zone, cancellationToken).ConfigureAwait(false);
+            if (result is null)
+                return NotFound();
+
             return Ok(result);
         }
 
         [HttpGet("{zone}/{date}")]
-        public async Task<IActionResult> FindByDate(string zone, string date, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> FindByZoneAndDate(string zone, string date, CancellationToken cancellationToken = default)
         {
             var result = await _jakimSolatService.GetWakTuSolatByZoneAndDate(zone, date, cancellationToken).ConfigureAwait(false);
+            if (result is null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet("/location/{location}")]
+        public async Task<IActionResult> FindByLocation(string location, CancellationToken cancellationToken = default)
+        {
+            var result = await _jakimSolatService.GetWakTuSolatByLocation(location, cancellationToken).ConfigureAwait(false);
             if (result is null)
                 return NotFound();
 
