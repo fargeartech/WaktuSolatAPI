@@ -1,0 +1,13 @@
+<Project>
+ <PropertyGroup>
+ <AnalysisLevel>latest</AnalysisLevel>
+ <AnalysisMode>all</AnalysisMode>
+ <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+ </PropertyGroup>
+ <ItemGroup>
+   <PackageReference Include="SonarAnalyzer.CSharp" Version="9.12.0.78982" Condition="$(MSBuildProjectExtension) == '.csproj'">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

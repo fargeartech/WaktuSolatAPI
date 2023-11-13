@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# comment out folder source json
+src/WaktuSolatMY/WaktuSolatMY.API/Jakim/*

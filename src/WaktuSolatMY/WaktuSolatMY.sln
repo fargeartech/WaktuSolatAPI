@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaktuSolatMY.API", "WaktuSolatMY.API\WaktuSolatMY.API.csproj", "{281E4CD1-B2E5-4B30-9725-1FAAEFE590A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaktuSolatMY.Application", "WaktuSolatMY.Application\WaktuSolatMY.Application.csproj", "{33E598AD-37BC-48C9-AF70-D89D270F55C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaktuSolatMY.Domain", "WaktuSolatMY.Domain\WaktuSolatMY.Domain.csproj", "{013B63DB-3AE4-438C-9537-7D3B66CCAA81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD577D09-B451-4D4A-BFCC-8D8077AC23A6}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{281E4CD1-B2E5-4B30-9725-1FAAEFE590A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281E4CD1-B2E5-4B30-9725-1FAAEFE590A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281E4CD1-B2E5-4B30-9725-1FAAEFE590A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281E4CD1-B2E5-4B30-9725-1FAAEFE590A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E598AD-37BC-48C9-AF70-D89D270F55C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E598AD-37BC-48C9-AF70-D89D270F55C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E598AD-37BC-48C9-AF70-D89D270F55C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E598AD-37BC-48C9-AF70-D89D270F55C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013B63DB-3AE4-438C-9537-7D3B66CCAA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013B63DB-3AE4-438C-9537-7D3B66CCAA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013B63DB-3AE4-438C-9537-7D3B66CCAA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013B63DB-3AE4-438C-9537-7D3B66CCAA81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F12F963A-D1E8-45E0-A965-BC1ECB15A4E6}
+	EndGlobalSection
+EndGlobal
