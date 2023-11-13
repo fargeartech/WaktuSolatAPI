@@ -8,6 +8,8 @@
         }
 
         public IReadOnlyList<PrayerTime> prayerTime { get; set; }
+        public string state { get; set; }
+        public string desc { get; set; }
         public string status { get; set; }
         public string serverTime { get; set; }
         public string periodType { get; set; }
@@ -18,6 +20,8 @@
 
     public sealed class PrayerTime
     {
+        public string state { get; set; }
+        public string desc { get; set; }
         public string hijri { get; set; }
         public string date { get; set; }
         public string day { get; set; }

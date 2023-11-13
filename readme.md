@@ -9,6 +9,8 @@ The zone can be refer to this page [JAKIM E-SOLAT](https://www.e-solat.gov.my/in
 ## Usage
 
 ```csharp
+# returns 'find zonecode by searching by name of the location. this is wilcard searching. will return list of places'
+url/api/SolatTime/{location} e.g kuala langat
 
 # returns 'by zone and whole year'
 url/api/solattime/SGR01
