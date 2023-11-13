@@ -9,6 +9,7 @@ namespace WaktuSolatMY.Application.Services
     {
         Task<JakimResponse> GetWakTuSolatByZone(string zone, CancellationToken cancellationToken = default);
         Task GetSyncSolatAsync(CancellationToken cancellationToken = default);
+        Task<PrayerTime> GetWakTuSolatByZoneAndDate(string zone, string date, CancellationToken cancellationToken = default);
     }
 
     public sealed class JakimSolatService : IJakimSolatService
@@ -31,8 +32,31 @@ namespace WaktuSolatMY.Application.Services
             if (!File.Exists(directoryPath))
                 return null;
 
-            var rawFile = await File.ReadAllTextAsync(directoryPath,cancellationToken).ConfigureAwait(false);
+            var rawFile = await File.ReadAllTextAsync(directoryPath, cancellationToken).ConfigureAwait(false);
             return JsonSerializer.Deserialize<JakimResponse>(rawFile);
+        }
+        public async Task<PrayerTime> GetWakTuSolatByZoneAndDate(string zone, string date, CancellationToken cancellationToken = default)
+        {
+            var directoryPath = $"{_directoryPath}/{zone}.json";
+
+            if (!File.Exists(directoryPath))
+                return null;
+
+            //"01-Jan-2023"
+            var rawFile = await File.ReadAllTextAsync(directoryPath, cancellationToken).ConfigureAwait(false);
+            var jakimRaw = JsonSerializer.Deserialize<JakimResponse>(rawFile);
+            DateTime filterDate;
+            if (DateTime.TryParseExact(date,
+                                       Zones.Date_FormatSupported.Lists(),
+                                       System.Globalization.CultureInfo.InvariantCulture,
+                                       System.Globalization.DateTimeStyles.None,
+                                       out filterDate))
+            {
+                return jakimRaw
+                    .prayerTime
+                    .FirstOrDefault(x => x.date == filterDate.ToString("dd-MMM-yyyy"));
+            }
+            return null;
         }
 
         private async Task GetWakTuSolatByZoneAsync(string zone, CancellationToken cancellationToken = default)

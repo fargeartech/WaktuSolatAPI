@@ -1,4 +1,6 @@
-﻿namespace WaktuSolatMY.Application.Constants
+﻿using System.Net.NetworkInformation;
+
+namespace WaktuSolatMY.Application.Constants
 {
     public static class Zones
     {
@@ -76,6 +78,17 @@
         public static class BaseUrls
         {
             public const string JAKIM = "https://www.e-solat.gov.my/index.php";
+        }
+
+        public static class Date_FormatSupported
+        {
+            public static string[] Lists()
+            {
+                return new string[] {
+                "dd-MMM-yyyy",
+                "dd-MM-yyyy"
+                };
+            }
         }
     }
 }
